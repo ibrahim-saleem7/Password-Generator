@@ -54,34 +54,6 @@ body{
 .input-box span:hover{
   color: #4285F4!important;
 }
-.wrapper .pass-indicator{
-  width: 100%;
-  height: 4px;
-  position: relative;
-  background: #dfdfdf;
-  margin-top: 0.75rem;
-  border-radius: 25px;
-}
-.pass-indicator::before{
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 50%;
-  border-radius: inherit;
-  transition: width 0.3s ease;
-}
-.pass-indicator#weak::before{
-  width: 20%;
-  background: #E64A4A;
-}
-.pass-indicator#medium::before{
-  width: 50%;
-  background: #f1c80b;
-}
-.pass-indicator#strong::before{
-  width: 100%;
-  background: #4285F4;
-}
 .wrapper .pass-length{
   margin: 1.56rem 0 1.25rem;
 }
@@ -133,4 +105,41 @@ body{
   border-radius: 5px;
   text-transform: uppercase;
   margin: 0.94rem 0 1.3rem;
+}
+
+.indicator{
+  height: 10px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.indicator span{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: lightgrey;
+  border-radius: 5px;
+}
+.indicator span:nth-child(2){
+  margin: 0 3px;
+}
+.indicator span.active:before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+.indicator span.weak:before{
+  background-color: #ff4757;
+}
+.indicator span.medium:before{
+  background-color: orange;
+}
+.indicator span.strong:before{
+  background-color: #23ad5c;
 }
